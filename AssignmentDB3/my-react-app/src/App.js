@@ -1,6 +1,5 @@
 import { useState } from 'react'
 function App() {
-  console.log('hej')
 
   const [list, setList] = useState([]);
 
@@ -26,20 +25,19 @@ function App() {
           onClick={handleOnSubmit}>Press me</button>
       </form>
 
-      <table className="table">
+      <table class="table">
         <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">Id</th>
+            <th scope="col">Count</th>
           </tr>
         </thead>
         <tbody>
-          {list.map(l => {
+          {list.map(element => {
             return (
               <tr>
-                <td>{l.dust}</td>
+                <td>{element._id}</td>
+                <td>{element.count}</td>
               </tr>
             )
           })}
