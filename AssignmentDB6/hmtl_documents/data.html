@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html lang=“en”>
-   <head>
-        <title> Data </title>
-    </head>
-    
-    <body>       
-            <br>
-            <br>
-            <div>       
-            <h4>Your data: {{ content }}
-            <br>
-            <br>     
-                <div id='button'>
-                  <form action="/" method="GET">
-                     <input type=submit name=submit value='View another range of data'>
-                  </form>
-                </div>
-                
-                  or
 
-                <div id='button'>
-                  <form action="/bye" method="GET">
-                     <input type=submit name=submit value='---- say good bye ----'>
-                  </form>
-                </div>
-             </h4>
-             </div>   
-    </body>
+<head>
+  <title> Data </title>
+</head>
+
+<body>
+  <br>
+  <br>
+  <div>
+    <h3>Your data: </h3>
+    <h4>{{ data }}</h4>
+    <br>
+    <h3>Fetch Time:</h3>
+    <h4>{{ time }}</h4>
+    <br>
+    <br>
+    <div id='button'>
+      <form action="/" method="GET">
+        <input type=submit name=submit value='View another range of data'>
+      </form>
+    </div>
+
+    or
+
+    <div id='button'>
+      <form action="/bye" method="GET">
+        <input type=submit name=submit value='---- say good bye ----'>
+      </form>
+    </div>
+    </h4>
+  </div>
+</body>
+
 </html>
-

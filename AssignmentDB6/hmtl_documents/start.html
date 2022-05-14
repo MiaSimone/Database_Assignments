@@ -1,20 +1,67 @@
 <!DOCTYPE html>
 <html lang=“en”>
-   <head>
-        <title> Start </title>
-    </head>
-    
-    <body>      
-            <h2>Input the range of data you want to see</h2>
-            <h6>For instance: 1 and 3 it will print data with id 1, 2 and 3.</h6>  
-                <br>
-                <form method="POST" action="/data" id=pform>
-                    <div>
-                      Enter n1 <input type="text" name="n1"> <br>
-                      Enter n2 <input type="text" name="n2"> <br>
-                      <input type="submit" name="submit" value="Submit">
-                    </div>
-                </form>
-            </h2>
-    </body>
+
+<head>
+    <title> Start </title>
+</head>
+
+<body>
+    <h2>Input the range of data you want to see</h2>
+    <h4>For instance: 1 and 3 it will print data with id 1, 2 and 3.</h4>
+    <br>
+    <form method="POST" action="/data" id=pform>
+        <div>
+            Enter n1 <input type="text" name="n1"> <br>
+            Enter n2 <input type="text" name="n2"> <br>
+            <input type="submit" name="submit" value="Submit">
+        </div>
+    </form>
+
+    <br>
+    <br>
+
+    <h3>Attributes (Time: {{ time }}) </h3>
+    <p id="attr" hidden>{{ attributes }}</p>
+    <ul id="aList">
+    </ul>
+
+    <script>
+        // ['ID IPEDS Occupation Parent', 'IPEDS Occupation Parent', 'ID IPEDS Occupation', 'IPEDS Occupation', 'ID Year', 'Year', 'ID Carnegie Parent', 'Carnegie Parent', 'ID Carnegie', 'Carnegie', 'ID University', 'University', 'Total Noninstructional Employees', 'Slug University']
+        test1 = document.getElementById("attr").innerHTML;
+        attributes = test1.split("'");
+        while (attributes.indexOf(", ") !== -1) {
+            attributes.splice(attributes.indexOf(", "), 1);
+        }
+        attributes.splice(attributes.indexOf("["), 1);
+        attributes.splice(attributes.indexOf("]"), 1);
+        for (let i = 0; i < attributes.length; i++) {
+            const element = attributes[i];
+            document.getElementById('aList').innerHTML += '<li>' + element + '</li>';
+        }
+
+    </script>
+
+    <br>
+    <br>
+
+
+    <h2>Search for specific attributes</h2>
+    <h4>For instance: "1" and "Carnegie"</h4>
+    <br>
+    <form method="POST" action="/specificData" id=pform>
+        <div>
+            Enter n <input type="text" name="n"> <br>
+            Enter s <input type="text" name="s"> <br>
+            <input type="submit" name="submit" value="Submit">
+        </div>
+    </form>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</body>
+
 </html>

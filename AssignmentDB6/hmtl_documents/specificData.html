@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang=“en”>
+   <head>
+        <title> Specific Data </title>
+    </head>
+    
+    <body>
+        <br>
+        <br>
+        <div>
+          <h3>Your data: </h3>
+          <h4>{{ data }}</h4>
+          <br>
+          <h3>Fetch Time:</h3>
+          <h4>{{ time }}</h4>
+          <br>
+          <br>
+          <div id='button'>
+            <form action="/" method="GET">
+              <input type=submit name=submit value='Search for other data'>
+            </form>
+          </div>
+      
+          or
+      
+          <div id='button'>
+            <form action="/bye" method="GET">
+              <input type=submit name=submit value='---- say good bye ----'>
+            </form>
+          </div>
+          </h4>
+        </div>
+      </body>
+</html>
